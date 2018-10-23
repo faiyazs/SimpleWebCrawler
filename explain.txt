@@ -1,0 +1,24 @@
+The major functions are
+
+=> result() : gets top google results using the google search library
+=> parser() : checks the robots.txt file of the link to check where it is crawlable or not
+=> findScore() : finds the relevance score of the website
+=> findPromScore() : finds the promise of a website
+=> bfs() : gets the links from google and checks if the links are crawlable or not and then finds the relevance of those
+            links and appends to a queue , calls bfs_parse() to perform the bfs operation and after that it calculates
+            the harvest score by checking if the relevance is greater than the given threshold or not and outputs it into
+            a log file will all the stats
+=> bfs_crawl() : gets the link of google search and performs BFS operation by getting links from each link and crawling it
+                 and finds the relavence and appending it to a queue and checking if depth limit is reached or not
+=> ncrawl() : gets the links from google and checks if the links are crawlable or not and then finds the relevance of those
+            links and promise is assigned as -1 and appends to a PriorityQueue , calls ncrawl_parse() to perform the focused
+            crawling operation and after that it calculates the harvest score by checking if the relevance is greater than the
+            given threshold or not and outputs it into a log file will all the stats
+=>ncrawl_parse() : gets the link of google search and performs BFS operation by getting links from each link and crawling it
+                  and finds the relavence and promise of the links and appending it to a PriorityQueue and checking if depth
+                  limit is reached or not and total links have been visited or not
+
+Exceptions:
+=> Some links make take time to get their status
+=> If multiple links point to same link , the link when it came first is considered and its promised is stored
+   and others are discarded !
