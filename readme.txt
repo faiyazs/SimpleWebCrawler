@@ -1,3 +1,4 @@
+Program to do BFS and n-Focused crawling. (Simple approach)
 Files Present
 
 => web_crawler.py           - This file consists the code that performs BFS and Focused Crawling for a query
